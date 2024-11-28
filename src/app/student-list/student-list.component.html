@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Student List</h2>
+    <table class="table table-striped" border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.name }}</td>
+          <td>{{ student.age }}</td>
+          <td>{{ student.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div>
+      <button (click)="prevPage()" [disabled]="pageNumber <= 1" class="btn btn-primary">Previous</button>
+      <button (click)="nextPage()" [disabled]="(pageNumber * pageSize) >= totalCount" class="btn btn-primary">Next</button>
+    </div>
+  </div>
+  
